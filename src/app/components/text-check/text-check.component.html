@@ -1,0 +1,18 @@
+<ng-container>
+  <form [formGroup]="textForm">
+
+    <mat-form-field>
+      <textarea [formControl]="textForm.controls.text"
+                matInput
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="5"
+                cdkAutosizeMaxRows="27"
+                placeholder="Text"></textarea>
+      <mat-hint align="end"><strong>{{textForm.controls.text.value.length}}/1000</strong> </mat-hint>
+    </mat-form-field>
+
+    <button color="primary" mat-button [disabled]="!textForm.valid" (click)="onSubmit()">Check</button>
+
+  </form>
+</ng-container>

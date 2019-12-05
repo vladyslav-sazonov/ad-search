@@ -1,0 +1,17 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 25px;
+
+  mat-form-field {
+    width: 50%;
+    margin: 15px 0;
+  }
+
+  .mat-button {
+    max-width: 300px;
+    font-size: 24px;
+  }
+}
