@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { TextCheckData } from './text-check.data';
 import { TextCheckService } from './text-check.service';
 
 @Injectable()
@@ -13,7 +15,7 @@ export class TextCheckFormService {
     });
   }
 
-  submit(): void {
-    this.textCheck.submit(this.textCheckForm.value);
+  submit(): Observable<TextCheckData> {
+    return this.textCheck.submit(this.textCheckForm.value);
   }
 }
