@@ -1,17 +1,25 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, DoCheck, ElementRef, Input } from '@angular/core';
 
 @Component({
   selector: 'app-check-result',
   templateUrl: './check-result.component.html',
   styleUrls: ['./check-result.component.scss']
 })
-export class CheckResultComponent implements OnInit {
+export class CheckResultComponent implements DoCheck {
 
   @Input('result') result;
 
-  constructor() { }
+  @Input('text') text;
 
-  ngOnInit(): void {
+  constructor(private elRef: ElementRef) { }
+
+  ngDoCheck(): void {
+    const sentences: any = this.elRef.nativeElement.children;
+    if (sentences.length > 0) {
+      for(const sentence of sentences) {
+        console.log(sentence.getAttribute('data-conf'));
+      }
+    }
   }
 
 }

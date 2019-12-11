@@ -1,1 +1,3 @@
-<p>{{result | json}}</p>
+<ng-container>
+  <p *ngIf="result" [innerHTML]="text | highlight: result" #data></p>
+</ng-container>
