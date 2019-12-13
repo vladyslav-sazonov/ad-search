@@ -1,7 +1,8 @@
 <ng-container>
   <div class="container">
-    <form [formGroup]="textForm">
-      <mat-form-field>
+    <div class="sub-1">
+      <form [formGroup]="textForm">
+        <mat-form-field>
       <textarea [formControl]="textForm.controls.text"
                 matInput
                 cdkTextareaAutosize
@@ -10,26 +11,31 @@
                 cdkAutosizeMaxRows="12"
                 placeholder="Text"
                 [attr.disabled]="result ? '' : null"></textarea>
-        <mat-hint align="end"><strong>{{textForm.controls.text.value && textForm.controls.text.value.length || 0}}/1000</strong></mat-hint>
-      </mat-form-field>
-      <div class="actions">
-        <button color="primary" mat-raised-button [disabled]="!result || (textForm.controls.text.value && !textForm.controls.text.value.length)"
-                (click)="clear()" class="button-action">Try again
-        </button>
-        <button color="primary" mat-raised-button [disabled]="!textForm.valid || result" (click)="onSubmit()"
-                class="button-action">Check
-        </button>
+          <mat-hint align="end"><strong>{{textForm.controls.text.value && textForm.controls.text.value.length || 0}}
+            /1000</strong></mat-hint>
+        </mat-form-field>
+        <div class="actions">
+          <button color="primary" mat-raised-button
+                  [disabled]="!result || (textForm.controls.text.value && !textForm.controls.text.value.length)"
+                  (click)="clear()" class="button-action">Try again
+          </button>
+          <button color="primary" mat-raised-button [disabled]="!textForm.valid || result" (click)="onSubmit()"
+                  class="button-action">Check
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="sub-2">
+      <app-check-result [result]="result" [text]="textForm.value.text"></app-check-result>
+    </div>
+    <div class="sub-3">
+      <div class="explanation">
+        <mat-list role="list">
+          <mat-list-item role="listitem"><span class="color"></span> - confidence is less than 33%</mat-list-item>
+          <mat-list-item role="listitem"><span class="color"></span> - confidence is between 33% and 66%</mat-list-item>
+          <mat-list-item role="listitem"><span class="color"></span> - confidence is more than 66%</mat-list-item>
+        </mat-list>
       </div>
-    </form>
-
-    <app-check-result [result]="result" [text]="textForm.value.text"></app-check-result>
-
-    <div class="explanation">
-      <mat-list role="list">
-        <mat-list-item role="listitem"><span class="color"></span> - confidence is less than 33%</mat-list-item>
-        <mat-list-item role="listitem"><span class="color"></span> - confidence is between 33% and 66%</mat-list-item>
-        <mat-list-item role="listitem"><span class="color"></span> - confidence is more than 66%</mat-list-item>
-      </mat-list>
     </div>
   </div>
 </ng-container>
