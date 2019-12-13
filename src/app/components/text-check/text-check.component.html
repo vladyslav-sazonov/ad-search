@@ -1,3 +1,4 @@
+<ng-container>
 <div class="container">
   <form [formGroup]="textForm">
     <mat-form-field>
@@ -15,4 +16,14 @@
   </form>
 
   <app-check-result [result]="result" [text]="textForm.value.text"></app-check-result>
+
+  <div class="explanation">
+    <p>Text highlight explanation:</p>
+    <ul>
+      <li><span class="color"></span> - confidence is less than 33%</li>
+      <li><span class="color"></span> - confidence is between 33% and 66%</li>
+      <li><span class="color"></span> - confidence is more than 66%</li>
+    </ul>
+  </div>
 </div>
+</ng-container>
