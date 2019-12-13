@@ -16,7 +16,7 @@ export class HighlightPipe implements PipeTransform {
     if (!args) {return value;}
     for(const sentence of args) {
       const reText: RegExp = new RegExp(sentence.text, 'gi');
-      value = value.replace(reText, `<span style="background: ${this.getBackground(sentence.confidence)}; cursor: pointer"
+      value = value.replace(reText, `<span class="highlight" style="background: ${this.getBackground(sentence.confidence)}"
         title="${sentence.confidence}">${sentence.text}</span>`);
     }
     return this.sanitizer.bypassSecurityTrustHtml(value);
@@ -24,13 +24,13 @@ export class HighlightPipe implements PipeTransform {
 
   private getBackground(confidence: number): string {
     if (confidence <= 0.33) {
-      return 'red';
+      return '#e23a3a';
     }
     if (confidence > 0.33 && confidence <= 0.66) {
-      return 'yellow';
+      return '#e6e62c';
     }
     if (confidence > 0.66) {
-      return 'green';
+      return '#64bd64';
     }
     return 'transparent';
   }

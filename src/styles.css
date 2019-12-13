@@ -4,4 +4,17 @@ html, body {
   height: 100%;
   background: #008890;
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.highlight {
+  padding: 2px;
+}
+
+.highlight:hover {
+  filter: brightness(150%);
+  cursor: pointer
+}

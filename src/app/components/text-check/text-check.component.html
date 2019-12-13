@@ -12,7 +12,7 @@
       <mat-hint align="end"><strong>{{textForm.controls.text.value.length}}/1000</strong> </mat-hint>
     </mat-form-field>
 
-    <button color="primary" mat-button [disabled]="!textForm.valid" (click)="onSubmit()">Check</button>
+    <button color="primary" mat-raised-button [disabled]="!textForm.valid" (click)="onSubmit()" class="button-check">Check</button>
   </form>
 
   <app-check-result [result]="result" [text]="textForm.value.text"></app-check-result>

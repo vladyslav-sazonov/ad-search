@@ -24,9 +24,10 @@
       margin: 15px 0;
     }
 
-    .mat-button {
+    .button-check {
       max-width: 300px;
       font-size: 24px;
+      font-weight: 200;
     }
   }
   .explanation {
@@ -44,17 +45,17 @@
       }
       li:nth-child(1) {
         .color {
-          background: red;
+          background: #e23a3a;
         }
       }
       li:nth-child(2) {
         .color {
-          background: yellow;
+          background: #e6e62c;
         }
       }
       li:nth-child(3) {
         .color {
-          background: green;
+          background: #64bd64;
         }
       }
     }
