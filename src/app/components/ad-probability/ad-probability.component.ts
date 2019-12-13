@@ -18,7 +18,6 @@ export class AdProbabilityComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.data);
   }
 
 }

@@ -38,6 +38,11 @@ export class TextCheckComponent implements OnInit {
     ).subscribe();
   }
 
+  clear(): void {
+    this.result = undefined;
+    this.textForm.reset();
+  }
+
   openDialog(): void {
     this.dialog.open(AdProbabilityComponent, {
       width: '250px',

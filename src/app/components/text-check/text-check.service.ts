@@ -11,7 +11,6 @@ export class TextCheckService {
   }
 
   submit(form: FormGroup): Observable<any> {
-    console.log(form);
     return this.http.post('http://0.0.0.0:3333/find_adverts', {});
   }
 }
